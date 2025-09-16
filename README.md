@@ -32,4 +32,4 @@ git clone [https://github.com/YourUsername/CS-251-R.git](https://github.com/Your
 ```
 
 ## ⚠️ Disclaimer
-The content in this repository is intended for educational and archival purposes only. If you are a student in CS 210, please use this as a reference but do not copy the code. 
+The content in this repository is intended for educational and archival purposes only. If you are a student in CS 251, please use this as a reference but do not copy the code. 
