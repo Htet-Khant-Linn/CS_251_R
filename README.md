@@ -28,7 +28,7 @@ This repository is structured to help you navigate the course material effective
 You can clone this repository to your local machine to access all the files. Use the following command:
 
 ```bash
-git clone [https://github.com/YourUsername/CS-251-R.git](https://github.com/YourUsername/CS-251-R.git)
+git clone https://github.com/Htet-Khant-Linn/CS_251_R.git
 ```
 
 ## ⚠️ Disclaimer
