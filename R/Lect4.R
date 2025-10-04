@@ -8,7 +8,7 @@ Candy_Sales_2 <- read.csv("C:/Users/User/Downloads/Candy_Sales.csv")
 #to see data set 
 
 
-head(Candy_Sales_2)
+head(Candy_Sales)
 names(Candy_Sales)
 summary(Candy_Sales)
 table(Candy_Sales$Country.Region)

@@ -59,3 +59,5 @@ plot(x)
 
 z = replicate(10, 3)
 z
+
+args(replicate)
