@@ -17,9 +17,9 @@ This course provides a comprehensive introduction to statistical concepts with a
 This repository is structured to help you navigate the course material effectively.
 
 * **/assignments:** Contains my personal solutions to the course assignments and problem sets.
-* **/notes:** Includes personal notes and summaries from lectures and readings.
+* **/R:** Includes personal notes and summaries from lectures and readings.
 * **/projects:** Larger-scale projects, including the final project.
-* **/resources:** A collection of useful links, articles, and supplementary materials related to the course topics.
+* **/data:** A collection of materials related to the course topics.
 
 ---
 
