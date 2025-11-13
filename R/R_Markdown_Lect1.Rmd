@@ -1,0 +1,129 @@
+---
+title: "RLect_MarkDown"
+author: "KhineNweLin"
+date: "2025-11-06"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is R Markdown practice. make it italic with *italic* and this is **bold**.
+
+# Header 1 
+
+## Header 2 
+generate 10 observations from standard normal distribution 
+
+```{r}
+norm = rnorm(10)
+
+norm
+
+
+```
+
+[Link](https://www.parami.edu.mm/)
+
+$A = \pi \times r^{2}$
+
+```{r, echo=TRUE}  
+A <- c("a", "a", "b", "b")
+B <- c(5, 10, 15, 20)
+dataframe <- data.frame(A, B)
+print(dataframe)
+```
+
+
+Hiding code Chunk
+```{r, echo=FALSE}  
+A <- c("a", "a", "b", "b")
+B <- c(5, 10, 15, 20)
+dataframe <- data.frame(A, B)
+print(dataframe)
+```
+
+# Inserting Figures 
+
+```{r, fig.width=4, fig.height=3}
+A <- c("a", "a", "b", "b")
+B <- c(5, 10, 15, 20)
+dataframe <- data.frame(A, B)
+print(dataframe)
+boxplot(B~A,data=dataframe)
+```
+
+#Inserting Tables
+
+kable() function from knitr package 
+
+pander function from pander package
+```{r, warning= FALSE}
+library(pander)
+plant <- c("a", "b", "c")
+temperature <- c(20, 20, 20)
+growth <- c(0.65, 0.95, 0.15)
+dataframe <- data.frame(plant, temperature, growth)
+emphasize.italics.cols(3)   # Make the 3rd column italics
+pander(dataframe)           # Create the table
+```
+
+
+```{r warning=FALSE}
+library(broom)
+library(pander)
+A <- c(20, 15, 10)
+B <- c(1, 2, 3)
+
+lm_test <- lm(A ~ B)            # Creating linear model
+
+table_obj <- tidy(lm_test)      # Using tidy() to create a new R object called table
+
+pander(table_obj, digits = 3)   # Using pander() to view the created table, with 3 sig figs 
+```
+
+# Summary statistics
+
+
+```{r}
+norm = rnorm(100)
+
+mean(norm)
+
+sd(norm)
+
+plot(norm)
+```
+
+```{r}
+x <- rnorm(100)
+e <- rnorm(100, mean = 0, sd = 5)
+y <- 5 + 15 * x + e
+
+m = lm(y~ x)
+summary(m)
+```
+
+```{r}
+resid(m)
+head(resid(m))
+plot(resid(m))
+```
+
+```{r}
+u <- rnorm(100)
+v <- rnorm(100, mean = 3,  sd = 2)
+w <- rnorm(100, mean = -3, sd = 1)
+e <- rnorm(100, mean = 0,  sd = 3)
+
+q= lm(y ~ u + v + w)
+summary(q)
+plot(resid(q))
+
+```
+
+
+
