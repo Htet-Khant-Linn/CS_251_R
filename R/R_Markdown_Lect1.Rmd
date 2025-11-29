@@ -1,8 +1,10 @@
 ---
 title: "RLect_MarkDown"
-author: "KhineNweLin"
+author: "Htet_Khant_Linn"
 date: "2025-11-06"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -13,10 +15,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 This is R Markdown practice. make it italic with *italic* and this is **bold**.
 
-# Header 1 
+# Header 1
 
-## Header 2 
-generate 10 observations from standard normal distribution 
+## Header 2
+
+generate 10 observations from standard normal distribution
 
 ```{r}
 norm = rnorm(10)
@@ -30,23 +33,23 @@ norm
 
 $A = \pi \times r^{2}$
 
-```{r, echo=TRUE}  
+```{r, echo=TRUE}
 A <- c("a", "a", "b", "b")
 B <- c(5, 10, 15, 20)
 dataframe <- data.frame(A, B)
 print(dataframe)
 ```
-
 
 Hiding code Chunk
-```{r, echo=FALSE}  
+
+```{r, echo=FALSE}
 A <- c("a", "a", "b", "b")
 B <- c(5, 10, 15, 20)
 dataframe <- data.frame(A, B)
 print(dataframe)
 ```
 
-# Inserting Figures 
+# Inserting Figures
 
 ```{r, fig.width=4, fig.height=3}
 A <- c("a", "a", "b", "b")
@@ -58,9 +61,10 @@ boxplot(B~A,data=dataframe)
 
 #Inserting Tables
 
-kable() function from knitr package 
+kable() function from knitr package
 
 pander function from pander package
+
 ```{r, warning= FALSE}
 library(pander)
 plant <- c("a", "b", "c")
@@ -70,7 +74,6 @@ dataframe <- data.frame(plant, temperature, growth)
 emphasize.italics.cols(3)   # Make the 3rd column italics
 pander(dataframe)           # Create the table
 ```
-
 
 ```{r warning=FALSE}
 library(broom)
@@ -86,7 +89,6 @@ pander(table_obj, digits = 3)   # Using pander() to view the created table, with
 ```
 
 # Summary statistics
-
 
 ```{r}
 norm = rnorm(100)
@@ -124,6 +126,5 @@ summary(q)
 plot(resid(q))
 
 ```
-
 
 

@@ -1,0 +1,76 @@
+---
+title: "2025-11-28_In Class Exercise"
+author: "Htet Khant Linn"
+date: "2025-11-29"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#Library Installation
+
+```{r}
+library(zoo)
+library(forecast)
+library(ggplot2)
+library(tseries)
+
+```
+
+```{r}
+ time <- 1:200
+ seasonal <- 10*sin(2*pi*time/12) + rnorm(200)
+ 
+ ts2 = zoo(seasonal, time)
+ plot(ts2)
+```
+
+#Perform ADF test
+
+```{r}
+ adf.test(ts2)
+ 
+```
+
+#Perform ACF test
+
+```{r}
+acf(ts2)
+ 
+```
+
+#Perform PACF test
+
+```{r}
+pacf(ts2)
+ 
+```
+
+#Fit an automated ARIMA model
+
+```{r}
+ model = auto.arima(ts2,trace=TRUE, seasonal= TRUE)
+
+```
+
+#Model Summary
+
+```{r}
+summary(model)
+
+```
+
+#Forecasting for 2 years
+
+```{r}
+forecast_future= forecast(model, h=24)
+plot(forecast_future, main="Forecasted model")
+```
+
+#Ljung_Box test for model validation
+
+```{r}
+Box.test(forecast_future$residuals,type="Ljung-Box")
+```
