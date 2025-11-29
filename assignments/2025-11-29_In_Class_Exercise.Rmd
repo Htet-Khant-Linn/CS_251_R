@@ -21,11 +21,13 @@ library(tseries)
 
 ```{r}
  time <- 1:200
+set.seed(123)
  seasonal <- 10*sin(2*pi*time/12) + rnorm(200)
  
  ts2 = zoo(seasonal, time)
  plot(ts2)
 ```
+
 
 #Perform ADF test
 
@@ -33,6 +35,8 @@ library(tseries)
  adf.test(ts2)
  
 ```
+The test yields a p-value of 0.01, which supports the conclusion that the time series is stationary and suitable for modeling.
+
 
 #Perform ACF test
 
@@ -40,6 +44,8 @@ library(tseries)
 acf(ts2)
  
 ```
+The plot displays a distinct wave-like pattern, serving as evidence of strong seasonality within the data.
+
 
 #Perform PACF test
 
@@ -47,13 +53,17 @@ acf(ts2)
 pacf(ts2)
  
 ```
+Significant spikes at the initial lags indicate that immediate past observations are strong predictors of current values.
+
 
 #Fit an automated ARIMA model
 
 ```{r}
- model = auto.arima(ts2,trace=TRUE, seasonal= TRUE)
+model = auto.arima(ts2,trace=TRUE, seasonal= TRUE)
 
 ```
+The automated algorithm identified an ARIMA(3,0,0) model as the best fit, utilizing the last three data points for prediction.
+
 
 #Model Summary
 
@@ -74,3 +84,4 @@ plot(forecast_future, main="Forecasted model")
 ```{r}
 Box.test(forecast_future$residuals,type="Ljung-Box")
 ```
+The resulting p-value is extremely low, indicating that significant patterns remain in the residuals and the model fit is not yet optimal.
